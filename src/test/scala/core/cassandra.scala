@@ -39,7 +39,7 @@ trait CleanCassandra extends SpecificationStructure {
     new File(uri).listFiles().foreach { file =>
       if (file.getName.endsWith(".cql")) runClq(session, file)
     }
-    session.shutdown()
+    session.close()
   }
 
   override def map(fs: => Fragments) = super.map(fs) insert Step(runAllClqs())

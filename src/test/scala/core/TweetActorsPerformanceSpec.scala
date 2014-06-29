@@ -39,12 +39,12 @@ class TweetActorsPerformanceSpec extends SpecificationLike
       write(count = 10000, seconds = 1)
     }
 
-    "250k writes under 10s" in {
-      write(count = 250000, seconds = 10)
+    "250k writes under 15s" in {
+      write(count = 250000, seconds = 15)
     }
 
-    "1M writes under 25s" in {
-      write(count = 1000000, seconds = 25)
+    "1M writes under 45s" in {
+      write(count = 1000000, seconds = 45)
     }
 
   }
